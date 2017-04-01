@@ -17,6 +17,9 @@ footer {
 	
 }
 
+img {
+}
+
 p {
 	font-family: 'Arial';
 	font-size: 18px;
@@ -31,7 +34,7 @@ h1 {
 	font-weight: 300;
 	letter-spacing: 2px;
 	line-height: 1em;
-	margin-bottom:0.2em;
+	margin-bottom:0.5em;
 	margin-top:0.2em;
 }
 
@@ -64,7 +67,7 @@ h3 {
 }
 
 .btn-primary {
-	  border-radius: 10px;
+	border-radius: 10px;
 	background-color: #ff4081;
 	border-color: #ff4081;
 }
@@ -123,6 +126,7 @@ h3 {
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
+  border-radius: 10px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -200,10 +204,10 @@ h3 {
 }
 body {
   background: #76b852; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
-  background: linear-gradient(to left, #76b852, #8DC26F);
+  background: -webkit-linear-gradient(right, #262673, #262673);
+  background: -moz-linear-gradient(right, #262673, #262673);
+  background: -o-linear-gradient(right, #262673, #262673);
+  background: linear-gradient(to left, #262673, #262673);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
