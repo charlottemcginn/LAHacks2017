@@ -3,12 +3,12 @@ var app = express();
 
 app.use(express.static('.'));
 
-/*app.get('/', function (req, res) {
+app.get('/', function (req, res) {
 	res.send('Hello World');
-})*/
+})
 
-app.get('/',function(req,res) {
-        res.sendFile("index.html",{"root":__dirname});
+app.get('/LAHacks',function(req,res) {
+        res.sendFile("LAHacks.jpeg",{"root":__dirname});
 })
   
 var server = app.listen(8081, function () {
