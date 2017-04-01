@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #262673;
+	height: 100vh;
+	background-size: cover;
+	color: #fff;
+}
+
+footer {
+	
+}
+
+p {
+	font-family: 'Arial';
+	font-size: 18px;
+}
+
+h1, h2, h3, .btn-primary, .btn-secondary {
+	font-family: 'Raleway', 'Arial';
+}
+
+h1 {
+	font-size: 72px;
+	font-weight: 300;
+	letter-spacing: 2px;
+	line-height: 1em;
+	margin-bottom:0.2em;
+	margin-top:0.2em;
+}
+
+h2 {
+	font-weight: 100;
+	font-size: 28px;
+	letter-spacing: 1px;
+	margin-top:0.3em;
+}
+
+h3 {
+	font-size: 38px;
+	font-weight: 300;
+	margin-top: 0.2em;
+	margin-bottom: 0.6em;
+}
+
+.jumbotron {
+	background-color: #262673;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle;
+	height: 100vh;
+	text-align: center;
+	position: relative;
+    padding:0 !important;
+    margin-bottom: 0 !important;
+}
+
+.btn-primary {
+	background-color: #ff4081;
+	border-color: #ff4081;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
+
+.btn-secondary {
+	background-color: #ffffff;
+	border-color: #ffffff;
+	color: #ff4081;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
+
+.bg-1 { 
+    background-color: #fff;
+    color: #555;
+}
+
+.bg-2 { 
+    background-color: #F6D7E0;
+    color: #555;
+}
+
+.bg-3 { 
+    background-color: #262673;
+    color: #ffffff;
+}
+
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+	padding-right: 50px;
+	padding-left: 50px;
+}
