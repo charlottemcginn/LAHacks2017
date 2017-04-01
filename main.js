@@ -1,5 +1,20 @@
 var express = require('express');
 var app = express();
+var mongoose = require('mongoose');
+
+//var options = {server:{socketOptions:{keepAlive:300000,connectTimeoutMS:30000} },
+//       replset:{socketOptions:{keepAlive:300000,connectTimeoutMS:30000} } };
+
+var mongodbUri = 'mongodb://mylipdb:myl1pdb!lahacks@ds060649.mlab.com:60649/mylipdb';//mylip:myl1pdb!:8081/db';
+
+mongoose.connect(mongodbUri);//, options);
+var conn = mongoose.connection;
+
+conn.on('error', console.error.bind(console, 'connection error:'));
+
+conn.once('open', function() {
+
+    });
 
 app.use(express.static('.'));
 
@@ -10,15 +25,6 @@ app.use(express.static('.'));
 app.get('/',function(req,res) {
         res.sendFile("html/index.html",{"root":__dirname});
 });
-
-/*function login_form () {
-    var form = document.createElement('form');
-    form.setAttribute('method','post');
-    form.setAttribute('action','/login');
-    form.style.display = 'hidden';
-    document.body.appendChild(form);
-    form.submit();
-    }*/
 
 app.get('/login',function(req,res) {
         //console.log(req.body);
