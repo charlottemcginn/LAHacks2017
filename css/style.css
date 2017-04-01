@@ -69,9 +69,9 @@ h3 {
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #00b3db;
-    border-color: #285e8e; /*set the color you want here*/
+	background-color: #ff99bb;
+	border-color: #ff99bb;
+	color: #ff4081;
 }
 
 .btn-secondary {
@@ -81,9 +81,9 @@ h3 {
 }
 
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #00b3db;
-    border-color: #285e8e; /*set the color you want here*/
+	background-color: #ff99bb;
+	border-color: #ff99bb;
+	color: #ff4081;
 }
 
 .bg-1 { 
