@@ -1,0 +1,24 @@
+{
+  "name": "lahacks2017",
+  "version": "1.0.0",
+  "description": "mylip app project",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlottemcginn/LAHacks2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlottemcginn/LAHacks2017/issues"
+  },
+  "homepage": "https://github.com/charlottemcginn/LAHacks2017#readme"
+}
