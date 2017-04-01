@@ -8,8 +8,10 @@ app.use(express.static('.'));
 })*/
 
 app.get('/',function(req,res) {
-        res.sendFile("index.html",{"root":__dirname});
+        res.sendFile("html/index.html",{"root":__dirname});
 })
+
+
   
 var server = app.listen(8081, function () {
       var host = server.address().address
