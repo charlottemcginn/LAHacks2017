@@ -64,6 +64,7 @@ h3 {
 }
 
 .btn-primary {
+	  border-radius: 10px;
 	background-color: #ff4081;
 	border-color: #ff4081;
 }
@@ -71,10 +72,11 @@ h3 {
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
 	background-color: #ff99bb;
 	border-color: #ff99bb;
-	color: #ff4081;
+	color: #ffffff;
 }
 
 .btn-secondary {
+	border-radius: 10px;
 	background-color: #ffffff;
 	border-color: #ffffff;
 	color: #ff4081;
@@ -83,7 +85,7 @@ h3 {
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-primary {
 	background-color: #ff99bb;
 	border-color: #ff99bb;
-	color: #ff4081;
+	color: #ffffff;
 }
 
 .bg-1 { 
@@ -108,7 +110,7 @@ h3 {
 	padding-left: 50px;
 }
 
-/* Login Page CSS */
+/* Login Page CSS ----------------------------*/
 
 .login-page {
   width: 360px;
@@ -128,8 +130,10 @@ h3 {
 .form input {
   outline: 0;
   background: #f2f2f2;
+  color: #1a1a1a;
   width: 100%;
   border: 0;
+  border-radius: 10px;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
@@ -138,9 +142,10 @@ h3 {
 .form button {
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: #ff4081;
   width: 100%;
   border: 0;
+  border-radius: 10px;
   padding: 15px;
   color: #FFFFFF;
   font-size: 14px;
@@ -149,7 +154,7 @@ h3 {
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #ff99bb;
 }
 .form .message {
   margin: 15px 0 0;
@@ -157,11 +162,8 @@ h3 {
   font-size: 12px;
 }
 .form .message a {
-  color: #4CAF50;
+  color: #ff4081;
   text-decoration: none;
-}
-.form .register-form {
-  display: none;
 }
 .container {
   position: relative;
