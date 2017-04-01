@@ -22,7 +22,7 @@ p {
 	font-size: 18px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .btn-primary, .btn-secondary {
 	font-family: 'Raleway', 'Arial';
 }
 
@@ -64,11 +64,26 @@ h3 {
 }
 
 .btn-primary {
-	
+	background-color: #ff4081;
+	border-color: #ff4081;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
 }
 
 .btn-secondary {
+	background-color: #ffffff;
+	border-color: #ffffff;
+	color: #ff4081;
+}
 
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
 }
 
 .bg-1 { 
