@@ -30,7 +30,14 @@
                 <h1>myLip</h1>
                 <form class="form-horizontal" role="form">
                     <a href="/login"><button name="login_button" value="val" type="button" class="btn btn-primary">Login</button></a>
-                    <a href="/signup"><button type="button2" class="btn btn-secondary">Sign Up</button></a>
+                    <!--<script>
+		      $('button').click(function () {
+		        $.post('/login', {data: 'blah'}, function (data) {
+		          console.log(data);
+		        });
+		      }, 'json');
+		    </script>-->
+                    <button type="button2" class="btn btn-secondary">Sign Up</button>
                 </form>
             </div>
         </header>
