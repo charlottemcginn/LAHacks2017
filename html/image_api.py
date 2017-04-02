@@ -42,7 +42,7 @@ im = Image.open("test.bmp").convert("RGBA")
 red = 128
 green = 128
 blue = 0
-layer = Image.new('RGBA', im.size, (red, green, blue, 255)) # "hue" selection is done by choosing a color...
+layer = Image.new('RGBA', im.size, (red, green, blue, 128)) # "hue" selection is done by choosing a color...
 
 decoded = json.loads(data)
 
@@ -53,7 +53,7 @@ BottomRight = decoded[0]['faceLandmarks']['underLipBottom']['y']
 
 xy = ((decoded[0]['faceLandmarks']['mouthLeft']['x'], decoded[0]['faceLandmarks']['mouthLeft']['y']), (decoded[0]['faceLandmarks']['upperLipTop']['x'], decoded[0]['faceLandmarks']['upperLipTop']['y']), (decoded[0]['faceLandmarks']['mouthRight']['x'], decoded[0]['faceLandmarks']['mouthRight']['y']), (decoded[0]['faceLandmarks']['underLipBottom']['x'], decoded[0]['faceLandmarks']['underLipBottom']['y']))
 draw = ImageDraw.Draw(im)
-draw.polygon(xy, fill=(red, green, blue,0))
+draw.polygon(xy, fill=(red, green, blue,128))
 
 layer.paste(im,None,im);
 
