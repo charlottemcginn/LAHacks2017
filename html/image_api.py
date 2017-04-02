@@ -38,8 +38,11 @@ except Exception as e:
  #Now start to tint the original image
 
 urllib.urlretrieve("http://www.hack4fun.org/h4f/sites/default/files/bindump/lena_secret.bmp","test.bmp")
-im = Image.open("test.bmp")
-layer = Image.new('RGBA', im.size, (255, 0, 0, 1)) # "hue" selection is done by choosing a color...
+im = Image.open("test.bmp").convert("RGBA")
+red = 128
+green = 128
+blue = 0
+layer = Image.new('RGBA', im.size, (red, green, blue, 255)) # "hue" selection is done by choosing a color...
 
 decoded = json.loads(data)
 
@@ -50,8 +53,9 @@ BottomRight = decoded[0]['faceLandmarks']['underLipBottom']['y']
 
 xy = ((decoded[0]['faceLandmarks']['mouthLeft']['x'], decoded[0]['faceLandmarks']['mouthLeft']['y']), (decoded[0]['faceLandmarks']['upperLipTop']['x'], decoded[0]['faceLandmarks']['upperLipTop']['y']), (decoded[0]['faceLandmarks']['mouthRight']['x'], decoded[0]['faceLandmarks']['mouthRight']['y']), (decoded[0]['faceLandmarks']['underLipBottom']['x'], decoded[0]['faceLandmarks']['underLipBottom']['y']))
 draw = ImageDraw.Draw(im)
-draw.polygon(xy, fill=(255,0, 0,0))
+draw.polygon(xy, fill=(red, green, blue,0))
 
+layer.paste(im,None,im);
 
 # landmarks = face.FaceLandmarks;
 # TopLeft = landmarks.mouthLeft.X
@@ -71,4 +75,4 @@ draw.polygon(xy, fill=(255,0, 0,0))
 
 #output = Image.blend(im_new, cropped_resized, 0.5)
 
-im.save('output.bmp', 'BMP')
+layer.save('output.bmp', 'BMP')
