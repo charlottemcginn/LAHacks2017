@@ -2,14 +2,17 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+var jsonParser = bodyParser.json();
+var urlParser = bodyParser.urlencoded({extended: true});
+app.use(urlParser);
+app.use(jsonParser);
 app.use(express.static('.'));
 
 var mongoose = require('mongoose');
-
+//var options = {server:{socketOptions:{keepAlive:300000,connectTimeoutMS:30000}},
+//       replset:{socketOptions:{keepAlive:300000,connectTimeoutMS:30000}}};
 var mongodbUri = 'mongodb://mylipdb:myl1pdb!lahacks@ds060649.mlab.com:60649/mylipdb';
-mongoose.connect(mongodbUri);
+mongoose.connect(mongodbUri);//,options);
 var conn = mongoose.connection;
 
 conn.on('error', console.error.bind(console, 'connection error:'));
@@ -22,7 +25,7 @@ var colors = ['red','orange','pink','purple','dark','nude'];
 var lipstick = {type: String, enum: colors};
 var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
 var ProfileInfo = new Schema ({
-	username:ObjectId,
+	username:String,
 	password:String,
 	email: String,
 	lipsOwned:[lipstick]
@@ -47,18 +50,18 @@ app.post('/login',function(req,res) {
 	res.send('Not implemented yet');
     });
   
-app.post('/signup',bodyParser,function(req,res) {
-	/*var data = req.body;
+app.post('/signup',jsonParser,function(req,res) {
+	var data = req.body;
         res = {
 	    username:data.username,
 	    password:data.password,
 	    email:data.email
 	};
-	console.log(res);*/
-	res.send('Done');//JSON.stringify(res));
-	/*myModel.create({username: data.username, password: data.password},function(err,instance) {
-		if(err) return handleError(err);
-		});*/
+	//console.log(res);
+	//res.end(JSON.stringify(res));
+	myModel.create({username: data.username, password: data.password},function(err,instance) {
+		if(err) return console.log(err);
+		});
 	//res.send('Account Created');
     });
 
