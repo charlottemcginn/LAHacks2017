@@ -1,13 +1,10 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
 
-//var options = {server:{socketOptions:{keepAlive:300000,connectTimeoutMS:30000} },
-//       replset:{socketOptions:{keepAlive:300000,connectTimeoutMS:30000} } };
-
-var mongodbUri = 'mongodb://mylipdb:myl1pdb!lahacks@ds060649.mlab.com:60649/mylipdb';//mylip:myl1pdb!:8081/db';
-
-mongoose.connect(mongodbUri);//, options);
+var mongodbUri = 'mongodb://mylipdb:myl1pdb!lahacks@ds060649.mlab.com:60649/mylipdb';
+mongoose.connect(mongodbUri);
 var conn = mongoose.connection;
 
 conn.on('error', console.error.bind(console, 'connection error:'));
@@ -16,19 +13,26 @@ conn.once('open', function() {
 
     });
 
-app.use(express.static('.'));
+var colors = ['red','orange','pink','purple','dark','nude'];
+var lipstick = {type: String, enum: colors};
+var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
+var ProfileInfo = new Schema ({
+	username:ObjectId,
+	password:String,
+	email: String,
+	lipsOwned:[lipstick]
+    });
 
-/*app.get('/', function (req, res) {
-	res.send('Hello World');
-})*/
+var myModel = mongoose.model('ProfileModel', ProfileInfo);
+
+app.use(express.static('.'));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/',function(req,res) {
         res.sendFile("html/index.html",{"root":__dirname});
 });
 
 app.get('/login',function(req,res) {
-        //console.log(req.body);
-	//res.send('Login');
         res.sendFile("html/login.html",{"root":__dirname});
     });
 
@@ -38,8 +42,18 @@ app.get('/signup',function(req,res) {
 
 app.post('/login',function(req,res) {
 	var data = req.body;
+	
     });
   
+app.post('/signup',function(req,res) {
+	var data = req.body;
+        console.log(data);
+	/*myModel.create({username: data.username, password: data.password},function(err,instance) {
+		if(err) return handleError(err);
+		});*/
+	    res.send('Account Created');
+    });
+
 var server = app.listen(8081, function () {
       var host = server.address().address
      var port = server.address().port
