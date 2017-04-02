@@ -128,8 +128,12 @@ app.get('/home-pinks',function(req,res) {
 	res.sendFile("html/home-pinks.html",{"root":__dirname});
     });
 
-app.get('/mirror',function(req,res) {
+app.get('/home-mirror',function(req,res) {
 	res.sendFile("html/home-mirror.html",{"root":__dirname});
+    });
+
+app.get('/home-camera',function(req,res) {
+	res.sendFile("html/home-camera.html",{"root":__dirname});
     });
 
 app.post('/login',passport.authenticate('local',{failureRedirect:'/login'}),function(req,res) {
