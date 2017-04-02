@@ -33,65 +33,9 @@
                 <map name="drawermap">
                     <area  href="/home" shape="rect" coords="32,307,350,361" style="outline:none;"/>  
                 </map>
-
-                 <div class="popup" onclick="myFunction1()" style="position:absolute; top:250px; left: 570px; width:20px;height:100px">
-                    <img src="../img/nude-1.png" alt="Nude 1 Logo" style="width:20px;height:100px" >
-                    <span class="popuptext" id="myPopup1">
-                        <h3>Trap</h3>
-                        <img src="../img/nude-1-lips.jpeg" alt="Nude 1 Lips Logo" style="width:100px;height:100px" >
-                        <a href="https://colourpop.com/products/trap" target=".blank"><button type="button" class="btn btn-secondary">link</button></a>
-                    </span>
-                </div>
-
-                <div class="popup" onclick="myFunction2()" style="position:absolute; top:250px; left: 625px; width:20px;height:100px">
-                    <img src="../img/nude-2.png" alt="Nude 2 Logo" style="width:20px;height:100px" >
-                    <span class="popuptext" id="myPopup2">
-                        <h3>Times Square</h3>
-                        <img src="../img/nude-2-lips.jpg" alt="Nude 1 Lips Logo" style="width:100px;height:100px" >
-                        <a href="https://colourpop.com/products/times-square" target=".blank"><button type="button" class="btn btn-secondary">link</button></a>
-                    </span>
-                </div>
-
-                <div class="popup" onclick="myFunction3()" style="position:absolute; top:250px; left: 680px; width:15px;height:100px">
-                    <img class="grayscale" src="../img/nude-3.png" alt="Nude 3 Logo" style="width:20px;height:100px" id="lipstick">
-                    <span class="popuptext" id="myPopup3">
-                        <h3>Bianca</h3>
-                        <center><input type="file" class="btn btn-primary" style="max-width:100px; max-height: 100px;" accept="image/*" capture="camera" id="camera"></center>
-                        <img id="frame" style="max-width: 100px; max-height: 100px;">
-                        <a href="https://colourpop.com/products/bianca" target=".blank"><button type="button" class="btn btn-secondary">link</button></a>
-                    </span>
-                </div>
             </div>
         </header>
         
     </body>
-
-    <script>
-        // When the user clicks on <div>, open the popup
-        function myFunction1() {
-            var popup = document.getElementById("myPopup1");
-            popup.classList.toggle("show");
-        }
-        function myFunction2() {
-            var popup = document.getElementById("myPopup2");
-            popup.classList.toggle("show");
-        }
-        function myFunction3() {
-            var popup = document.getElementById("myPopup3");
-            popup.classList.toggle("show");
-        }
-
-        var camera = document.getElementById('camera');
-          var frame = document.getElementById('frame');
-
-          camera.addEventListener('change', function(e) {
-            var file = e.target.files[0]; 
-            // Do something with the image file.
-            frame.src = URL.createObjectURL(file);
-            camera.classList.toggle("hide");
-
-            var lipstick = document.getElementById('lipstick');
-            lipstick.classList.toggle("regular");
-          });
-    </script>
+    
 </html>
