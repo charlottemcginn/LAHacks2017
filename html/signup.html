@@ -34,11 +34,11 @@
             
             <div class="login-page">
               <div class="form">
-                <form class="register-form" action="127.0.0.1:8081/signup" method="POST">
+                <form class="register-form" action="/signup" method="post">
                   <input type="text" placeholder="username" name="username"/>
                   <input type="password" placeholder="password" name="password"/>
                   <input type="text" placeholder="email address" name="email"/>
-                  <button>create</button>
+                  <input type="submit" name="create" value="Submit"/>
                   <p class="message">Already registered? <a href="/login">Sign In</a></p>
                 </form>
               </div>
