@@ -3,8 +3,8 @@
 <html lang="en">
  
   <head>
-		<meta charset="utf-8"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
        
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -17,26 +17,31 @@
         <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Raleway:100,300;lang=en">
         
-     	<title>myLip</title>
+        <title>myLip</title>
+
+        <script src="capture.js">
+        </script>
 
         
     </head>
     <body>
-    	
-        <!-- Header -->
-    	<header>
-            
-        	<div class="jumbotron">
-                <h2>myLip</h2>
-                <a href="index.html"><button type="button" class="btn btn-logout">Logout</button></a>
-                <img src="../img/makeup-box-mirror.svg" alt="Lipstick Logo" style="width:383px;height:700px" usemap="#drawermap">
-                <map name="drawermap">
-                    <area  href="home-mirror.html" shape="rect" coords="110,49,275,165" /> 
-                    <area  href="home.html" shape="poly" coords="95,197,285,197,308,260,80,260" style="outline:none;"/>   
-                </map>
-            </div>
-        </header>
         
+        <!-- Header -->
+        <header>
+            
+            <div class="jumbotron">
+                <h2>myLip</h2>
+                    <a href="/logout"><button type="button" class="btn btn-logout">Logout</button></a>
+                  
+                        <img src="../img/mirror.svg" alt="Lipstick Logo" style="width:700px;height:1100px" usemap="#drawermap">
+                        <map name="drawermap">
+                        <area href="/home-mirror" shape="poly" coords="135,420,565,420,605,550,100,550" style="outline:none;"/>   
+                    </map>
+                
+
+            </div>
+
+        </header> 
+
     </body>
-    
 </html>

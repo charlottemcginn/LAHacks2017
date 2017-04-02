@@ -29,6 +29,10 @@ h1, h2, h3, .btn-primary, .btn-secondary {
 	font-family: 'Raleway', 'Arial';
 }
 
+ video, img {
+                max-width:100%;
+}
+
 h1 {
 	font-size: 72px;
 	font-weight: 300;
