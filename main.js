@@ -40,15 +40,23 @@ app.get('/',function(req,res) {
         res.sendFile("html/index.html",{"root":__dirname});
 });
 
-app.get('/login',function(req,res) {
-        res.sendFile("html/login.html",{"root":__dirname});
+app.get('/logout',function(req,res) {
+        delete req.session.user_id;
+	res.redirect('/login');//("html/index.html",{"root":__dirname});
     });
+
+app.get('/login',function(req,res) {
+	res.sendFile("html/login.html",{"root":__dirname});
+    });
+
+//app.get('/user_profile', checkAuth, function(req,res) {
+	
 
 app.get('/signup',function(req,res) {
 	res.sendFile("html/signup.html",{"root":__dirname});
     });
 
-app.get('/home',function(req,res) {
+app.get('/home/:req.sesion.user_id',function(req,res) {
 	res.sendFile("html/home.html",{"root":__dirname});
     });
 
@@ -61,12 +69,22 @@ app.get('/home-pinks',function(req,res) {
     });
 
 app.get('/mirror',function(req,res) {
-	res.sendFile("html/mirror.html",{"root":__dirname});
+	res.sendFile("html/home-mirror.html",{"root":__dirname});
     });
 
 app.post('/login',function(req,res) {
-	//var data = req.body;
-	res.send('Not implemented yet');
+	var post = req.body;
+	console.log(post);
+	var check_user = ProfModel.find(post.username, function(err,docs) {
+		res.json(docs);
+	    });
+	var check_pass = res.password;
+	if(post.password == check_pass) {
+	    req.session.user_id = res.username;
+            res.redirect('/home/:req.session.user_id');
+	} else {
+	    res.send('Incorrect username or password');
+	}
     });
   
 app.post('/signup',jsonParser,function(req,res) {
@@ -84,7 +102,7 @@ app.post('/signup',jsonParser,function(req,res) {
 		if(err) return console.log(err);
 		});*/
 	//res.redirect('http://127.0.0.1:8081'+req.url);
-	res.redirect('/home');
+	res.redirect('/login');
 	//res.sendFile("html/home.html",{"root":__dirname});
     });
 
