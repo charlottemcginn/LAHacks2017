@@ -50,8 +50,7 @@ BottomRight = decoded[0]['faceLandmarks']['underLipBottom']['y']
 
 xy = ((decoded[0]['faceLandmarks']['mouthLeft']['x'], decoded[0]['faceLandmarks']['mouthLeft']['y']), (decoded[0]['faceLandmarks']['upperLipTop']['x'], decoded[0]['faceLandmarks']['upperLipTop']['y']), (decoded[0]['faceLandmarks']['mouthRight']['x'], decoded[0]['faceLandmarks']['mouthRight']['y']), (decoded[0]['faceLandmarks']['underLipBottom']['x'], decoded[0]['faceLandmarks']['underLipBottom']['y']))
 draw = ImageDraw.Draw(im)
-draw.polygon(xy, fill=(255,0, 0))
-
+draw.polygon(xy, fill=(255,0, 0,0))
 
 
 # landmarks = face.FaceLandmarks;
